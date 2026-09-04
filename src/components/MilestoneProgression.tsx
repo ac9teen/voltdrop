@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Trophy, Smartphone, Users, CheckCircle2, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/config/site";
 
@@ -10,21 +11,21 @@ export const MilestoneProgression = () => {
       <div className="site-container">
         
         {/* Section Header */}
-        <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 64px auto" }}>
-          <div className="pill-badge pill-badge-gold" style={{ marginBottom: "16px" }}>
-            <Trophy style={{ width: "15px", height: "15px" }} />
+        <div className="section-header-box">
+          <div className="pill-badge pill-badge-gold" style={{ marginBottom: "12px" }}>
+            <Trophy style={{ width: "13px", height: "13px" }} />
             Transparent Milestone Scaling
           </div>
 
-          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
+          <h2 className="section-title">
             THE MORE THE COMMUNITY GROWS, <br />
             <span className="text-gradient-gold">THE MORE iPHONES WE GIVE AWAY.</span>
           </h2>
 
-          <div style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
+          <div className="section-subtitle">
             <p>We&apos;re not doing one tiny giveaway and calling it a day.</p>
             <p>We&apos;re tying the number of iPhones we give away to the size of the community.</p>
-            <p style={{ color: "#ffffff", fontWeight: 700, paddingTop: "8px" }}>
+            <p style={{ color: "#ffffff", fontWeight: 700, paddingTop: "6px" }}>
               Every additional 100 eligible participants unlocks another iPhone 17 Pro giveaway.
             </p>
           </div>
@@ -34,33 +35,33 @@ export const MilestoneProgression = () => {
         <div className="milestone-grid">
           {SITE_CONFIG.milestones.map((item, idx) => (
             <div key={idx} className="glass-card milestone-card">
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
                 <span className="tier-tag">TIER 0{idx + 1}</span>
                 <span className="tier-status">
-                  <CheckCircle2 style={{ width: "14px", height: "14px", color: "#10b981" }} />
+                  <CheckCircle2 style={{ width: "13px", height: "13px", color: "#10b981" }} />
                   {item.status}
                 </span>
               </div>
 
-              <div style={{ marginBottom: "24px" }}>
-                <div style={{ display: "flex", alignItems: "baseline", gap: "8px", marginBottom: "4px" }}>
+              <div style={{ marginBottom: "16px" }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "4px" }}>
                   <span className="milestone-number">{item.iphones}</span>
-                  <span style={{ fontSize: "1.25rem", fontWeight: 700, color: "#cbd5e1" }}>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "#cbd5e1" }}>
                     {item.iphones === 1 ? "iPhone" : "iPhones"}
                   </span>
                 </div>
-                <div style={{ fontSize: "14px", fontWeight: 700, color: "#fde047", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <Smartphone style={{ width: "16px", height: "16px" }} />
+                <div style={{ fontSize: "13px", fontWeight: 700, color: "#fde047", display: "flex", alignItems: "center", gap: "5px" }}>
+                  <Smartphone style={{ width: "14px", height: "14px" }} />
                   <span>{item.prize}</span>
                 </div>
               </div>
 
-              <div style={{ paddingTop: "16px", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-                <div style={{ fontSize: "11px", textTransform: "uppercase", color: "#94a3b8", fontWeight: 700, marginBottom: "4px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <Users style={{ width: "14px", height: "14px" }} />
+              <div style={{ paddingTop: "12px", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+                <div style={{ fontSize: "10.5px", textTransform: "uppercase", color: "#94a3b8", fontWeight: 700, marginBottom: "3px", display: "flex", alignItems: "center", gap: "5px" }}>
+                  <Users style={{ width: "13px", height: "13px" }} />
                   Eligible Threshold:
                 </div>
-                <div style={{ fontSize: "15px", fontWeight: 800, color: "#ffffff", fontFamily: "var(--font-mono)" }}>
+                <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff", fontFamily: "var(--font-mono)" }}>
                   {item.label}
                 </div>
               </div>
@@ -71,63 +72,101 @@ export const MilestoneProgression = () => {
         {/* Bottom Banner */}
         <div className="milestone-banner">
           <div>
-            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#ffffff", marginBottom: "6px", display: "flex", alignItems: "center", gap: "10px" }}>
-              <span style={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff", marginBottom: "4px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
               100% Mathematical &amp; Rule-Governed
             </h3>
-            <p style={{ fontSize: "14px", color: "#cbd5e1", maxWidth: "600px", margin: 0 }}>
+            <p style={{ fontSize: "13px", color: "#cbd5e1", maxWidth: "600px", margin: 0, lineHeight: 1.5 }}>
               No artificial caps. No hidden algorithms. Every block of 100 eligible participants triggers an additional allocation per official Giveaway Terms.
             </p>
           </div>
 
-          <a
+          <Link
             href={SITE_CONFIG.checkoutUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold"
-            style={{ padding: "16px 32px", fontSize: "1rem", whiteSpace: "nowrap" }}
+            className="btn-gold banner-cta"
           >
             <span>JOIN FOR {SITE_CONFIG.membershipFee} →</span>
-          </a>
+          </Link>
         </div>
 
       </div>
 
       <style jsx>{`
+        .section-header-box {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 44px auto;
+        }
+        @media (max-width: 768px) {
+          .section-header-box {
+            margin-bottom: 28px;
+          }
+        }
+        .section-title {
+          font-size: 1.6rem;
+          font-weight: 900;
+          margin-bottom: 14px;
+          letter-spacing: -0.03em;
+          line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+          .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+          }
+        }
+        .section-subtitle {
+          font-size: 0.925rem;
+          color: #cbd5e1;
+          line-height: 1.55;
+        }
+        @media (min-width: 768px) {
+          .section-subtitle {
+            font-size: 1.05rem;
+          }
+        }
         .milestone-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 24px;
-          margin-bottom: 48px;
+          gap: 14px;
+          margin-bottom: 32px;
         }
         @media (min-width: 640px) {
           .milestone-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
           }
         }
         @media (min-width: 1024px) {
           .milestone-grid {
             grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
           }
         }
         .milestone-card {
-          padding: 28px;
+          padding: 18px 16px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
         }
+        @media (min-width: 768px) {
+          .milestone-card {
+            padding: 24px;
+          }
+        }
         .tier-tag {
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 700;
-          padding: 4px 10px;
+          padding: 3px 8px;
           border-radius: 6px;
           background: rgba(255, 255, 255, 0.06);
           color: #cbd5e1;
           border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .tier-status {
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 700;
           color: #6ee7b7;
           display: flex;
@@ -135,26 +174,44 @@ export const MilestoneProgression = () => {
           gap: 4px;
         }
         .milestone-number {
-          font-size: 3.5rem;
+          font-size: 2.3rem;
           font-weight: 900;
           font-family: var(--font-mono);
           color: #ffffff;
           line-height: 1;
         }
+        @media (min-width: 768px) {
+          .milestone-number {
+            font-size: 3rem;
+          }
+        }
         .milestone-banner {
           background: rgba(18, 22, 34, 0.9);
           border: 1px solid rgba(255, 255, 255, 0.12);
-          border-radius: 20px;
-          padding: 28px 36px;
+          border-radius: 16px;
+          padding: 18px 20px;
           display: flex;
           flex-direction: column;
-          gap: 24px;
-          align-items: center;
+          gap: 16px;
+          align-items: flex-start;
           justify-content: space-between;
         }
         @media (min-width: 768px) {
           .milestone-banner {
+            border-radius: 20px;
+            padding: 24px 30px;
             flex-direction: row;
+            align-items: center;
+          }
+        }
+        .banner-cta {
+          padding: 12px 24px;
+          font-size: 0.925rem;
+          white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+          .banner-cta {
+            width: 100%;
           }
         }
       `}</style>

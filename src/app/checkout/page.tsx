@@ -522,8 +522,12 @@ export default function CheckoutPage() {
           padding: 36px;
         }
         @media (max-width: 640px) {
+          .checkout-page-root {
+            padding: 20px 12px;
+          }
           .checkout-card {
-            padding: 24px;
+            padding: 18px 14px;
+            border-radius: 18px;
           }
         }
         .form-group {

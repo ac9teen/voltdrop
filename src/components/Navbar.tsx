@@ -1,114 +1,176 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Zap, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/config/site";
 
 export const Navbar = () => {
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 40,
-        width: "100%",
-        backgroundColor: "rgba(8, 9, 14, 0.85)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-      }}
-    >
-      <div
-        className="site-container"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "80px",
-        }}
-      >
+    <header className="navbar-root">
+      <div className="site-container navbar-container">
         {/* Brand Logo */}
-        <a href="#" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
-          <div
-            style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #fde047 0%, #eab308 100%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 8px 20px rgba(234, 179, 8, 0.3)",
-            }}
-          >
-            <Zap style={{ width: "24px", height: "24px", color: "#08090e", fill: "currentColor" }} />
+        <Link href="/" className="brand-link">
+          <div className="brand-icon">
+            <Zap style={{ width: "18px", height: "18px", color: "#08090e", fill: "currentColor" }} />
           </div>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "22px", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span className="brand-title">
                 VOLT<span style={{ color: "#fde047" }}>DROP</span>
               </span>
-              <span className="pill-badge-gold" style={{ fontSize: "10px", padding: "2px 8px" }}>
-                VIP
-              </span>
+              <span className="brand-vip">VIP</span>
             </div>
-            <p style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 500, margin: 0 }}>
-              Private Electronics Community
-            </p>
+            <p className="brand-sub">Private Electronics Deals</p>
           </div>
-        </a>
+        </Link>
 
-        {/* Navigation Links */}
-        <nav
-          style={{
-            display: "none",
-            gap: "32px",
-            fontSize: "14px",
-            fontWeight: 600,
-          }}
-          className="desktop-nav"
-        >
-          <a href="#giveaway" style={{ color: "#cbd5e1", textDecoration: "none" }}>Giveaway Scale</a>
-          <a href="#telegram-drops" style={{ color: "#cbd5e1", textDecoration: "none" }}>Telegram Feed</a>
-          <a href="#recipients" style={{ color: "#cbd5e1", textDecoration: "none" }}>6 Winners Wall</a>
-          <a href="#what-you-get" style={{ color: "#cbd5e1", textDecoration: "none" }}>What You Get</a>
-          <a href="#how-it-works" style={{ color: "#cbd5e1", textDecoration: "none" }}>How It Works</a>
-          <a href="#faq" style={{ color: "#cbd5e1", textDecoration: "none" }}>FAQ</a>
+        {/* Desktop Nav Links */}
+        <nav className="desktop-nav">
+          <a href="#giveaway" className="nav-link">Giveaway Scale</a>
+          <a href="#telegram-drops" className="nav-link">Telegram Feed</a>
+          <a href="#recipients" className="nav-link">6 Winners Wall</a>
+          <a href="#what-you-get" className="nav-link">What You Get</a>
+          <a href="#how-it-works" className="nav-link">How It Works</a>
+          <a href="#faq" className="nav-link">FAQ</a>
         </nav>
 
         {/* Right CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div style={{ textAlign: "right", display: "none" }} className="nav-pricing">
-            <div style={{ fontSize: "11px", color: "#94a3b8" }}>One-Time Access</div>
-            <div style={{ fontSize: "15px", fontWeight: 800, color: "#fde047", fontFamily: "var(--font-mono)" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <div className="nav-pricing">
+            <div style={{ fontSize: "10px", color: "#94a3b8" }}>One-Time Fee</div>
+            <div style={{ fontSize: "13px", fontWeight: 800, color: "#fde047", fontFamily: "var(--font-mono)" }}>
               {SITE_CONFIG.membershipFee}
             </div>
           </div>
 
-          <a
+          <Link
             href={SITE_CONFIG.checkoutUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold"
-            style={{
-              padding: "12px 24px",
-              fontSize: "14px",
-              borderRadius: "12px",
-            }}
+            className="btn-gold nav-cta"
           >
-            <span>Join Now</span>
-            <ArrowRight style={{ width: "16px", height: "16px" }} />
-          </a>
+            <span>Join Community</span>
+            <ArrowRight style={{ width: "14px", height: "14px" }} />
+          </Link>
         </div>
       </div>
 
       <style jsx>{`
+        .navbar-root {
+          position: sticky;
+          top: 0;
+          z-index: 40;
+          width: 100%;
+          background-color: rgba(8, 9, 14, 0.9);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          height: 64px;
+        }
+        @media (max-width: 768px) {
+          .navbar-root {
+            height: 56px;
+          }
+        }
+        .navbar-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 100%;
+        }
+        .brand-link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+        }
+        .brand-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+          background: linear-gradient(135deg, #fde047 0%, #eab308 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 14px rgba(234, 179, 8, 0.3);
+          flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+          .brand-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+          }
+        }
+        .brand-title {
+          font-size: 19px;
+          font-weight: 900;
+          color: #ffffff;
+          letter-spacing: -0.03em;
+          font-family: var(--font-heading);
+        }
+        @media (max-width: 768px) {
+          .brand-title {
+            font-size: 17px;
+          }
+        }
+        .brand-vip {
+          font-size: 9px;
+          padding: 1px 6px;
+          border-radius: 4px;
+          background: rgba(234, 179, 8, 0.15);
+          color: #fde047;
+          border: 1px solid rgba(234, 179, 8, 0.35);
+          font-weight: 800;
+        }
+        .brand-sub {
+          font-size: 10px;
+          color: #94a3b8;
+          font-weight: 500;
+          margin: 0;
+        }
+        @media (max-width: 768px) {
+          .brand-sub {
+            display: none;
+          }
+        }
+        .desktop-nav {
+          display: none;
+          gap: 24px;
+          font-size: 13px;
+          font-weight: 600;
+        }
         @media (min-width: 1024px) {
           .desktop-nav {
-            display: flex !important;
+            display: flex;
           }
+        }
+        .nav-link {
+          color: #cbd5e1;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .nav-link:hover {
+          color: #fde047;
+        }
+        .nav-pricing {
+          text-align: right;
+          display: none;
+        }
+        @media (min-width: 768px) {
           .nav-pricing {
-            display: block !important;
+            display: block;
+          }
+        }
+        .nav-cta {
+          padding: 8px 16px;
+          font-size: 13px;
+          border-radius: 10px;
+          gap: 6px;
+        }
+        @media (max-width: 768px) {
+          .nav-cta {
+            padding: 7px 12px;
+            font-size: 12px;
           }
         }
       `}</style>

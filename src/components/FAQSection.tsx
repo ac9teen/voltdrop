@@ -44,26 +44,26 @@ export const FAQSection = () => {
 
   return (
     <section id="faq" className="section-wrapper" style={{ backgroundColor: "rgba(12, 15, 23, 0.4)" }}>
-      <div className="site-container" style={{ maxWidth: "900px" }}>
+      <div className="site-container" style={{ maxWidth: "860px" }}>
         
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <div className="pill-badge" style={{ marginBottom: "16px" }}>
-            <HelpCircle style={{ width: "15px", height: "15px" }} />
+        <div className="faq-header-box">
+          <div className="pill-badge" style={{ marginBottom: "12px" }}>
+            <HelpCircle style={{ width: "13px", height: "13px" }} />
             Clear Answers
           </div>
 
-          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "16px", letterSpacing: "-0.03em" }}>
+          <h2 className="faq-title">
             FREQUENTLY ASKED QUESTIONS
           </h2>
 
-          <p style={{ fontSize: "1.125rem", color: "#cbd5e1" }}>
+          <p className="faq-subtitle">
             Everything you need to know about the {SITE_CONFIG.communityName} community, deals, and giveaway mechanics.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -72,64 +72,32 @@ export const FAQSection = () => {
                 className="faq-item"
                 style={{
                   background: isOpen ? "rgba(22, 28, 44, 0.95)" : "rgba(18, 22, 34, 0.8)",
-                  border: isOpen ? "1px solid rgba(234, 179, 8, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
-                  borderRadius: "18px",
+                  border: isOpen ? "1px solid rgba(234, 179, 8, 0.4)" : "1px solid rgba(255, 255, 255, 0.08)",
+                  borderRadius: "14px",
                   overflow: "hidden",
                   transition: "all 0.2s ease",
-                  boxShadow: isOpen ? "0 15px 30px -10px rgba(0,0,0,0.8)" : "none",
                 }}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  style={{
-                    width: "100%",
-                    padding: "24px 28px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: "16px",
-                    background: "none",
-                    border: "none",
-                    color: "#ffffff",
-                    textAlign: "left",
-                    cursor: "pointer",
-                    fontSize: "1.125rem",
-                    fontWeight: 700,
-                    fontFamily: "var(--font-heading)",
-                  }}
+                  className="faq-btn"
                   aria-expanded={isOpen}
                 >
                   <span style={{ lineHeight: 1.4 }}>{faq.q}</span>
                   <div
+                    className="chevron-box"
                     style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "50%",
                       background: isOpen ? "rgba(234, 179, 8, 0.2)" : "rgba(255, 255, 255, 0.06)",
                       border: isOpen ? "1px solid rgba(234, 179, 8, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
                       transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: "transform 0.3s ease",
                     }}
                   >
-                    <ChevronDown style={{ width: "18px", height: "18px", color: isOpen ? "#fde047" : "#cbd5e1" }} />
+                    <ChevronDown style={{ width: "16px", height: "16px", color: isOpen ? "#fde047" : "#cbd5e1" }} />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div
-                    style={{
-                      padding: "0 28px 24px 28px",
-                      fontSize: "15px",
-                      color: "#cbd5e1",
-                      lineHeight: 1.6,
-                      borderTop: "1px solid rgba(255, 255, 255, 0.08)",
-                      paddingTop: "16px",
-                    }}
-                  >
+                  <div className="faq-content">
                     {faq.a}
                   </div>
                 )}
@@ -139,6 +107,86 @@ export const FAQSection = () => {
         </div>
 
       </div>
+
+      <style jsx>{`
+        .faq-header-box {
+          text-align: center;
+          margin-bottom: 36px;
+        }
+        @media (max-width: 768px) {
+          .faq-header-box {
+            margin-bottom: 24px;
+          }
+        }
+        .faq-title {
+          font-size: 1.6rem;
+          font-weight: 900;
+          margin-bottom: 12px;
+          letter-spacing: -0.03em;
+        }
+        @media (min-width: 768px) {
+          .faq-title {
+            font-size: 2.3rem;
+            margin-bottom: 16px;
+          }
+        }
+        .faq-subtitle {
+          font-size: 0.925rem;
+          color: #cbd5e1;
+        }
+        @media (min-width: 768px) {
+          .faq-subtitle {
+            font-size: 1.05rem;
+          }
+        }
+        .faq-btn {
+          width: 100%;
+          padding: 16px 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          background: none;
+          border: none;
+          color: #ffffff;
+          textAlign: left;
+          cursor: pointer;
+          font-size: 14.5px;
+          font-weight: 700;
+          font-family: var(--font-heading);
+        }
+        @media (min-width: 768px) {
+          .faq-btn {
+            padding: 20px 24px;
+            font-size: 1.05rem;
+          }
+        }
+        .chevron-box {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: transform 0.25s ease;
+        }
+        .faq-content {
+          padding: 0 18px 16px 18px;
+          font-size: 13.5px;
+          color: #cbd5e1;
+          line-height: 1.55;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          padding-top: 12px;
+        }
+        @media (min-width: 768px) {
+          .faq-content {
+            padding: 0 24px 20px 24px;
+            font-size: 14.5px;
+            padding-top: 14px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -43,21 +43,29 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-dark);
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.12), transparent 70%),
-    radial-gradient(ellipse 70% 50% at 90% 40%, rgba(245, 158, 11, 0.08), transparent 70%),
-    radial-gradient(ellipse 80% 50% at 10% 80%, rgba(14, 165, 233, 0.08), transparent 70%);
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.08), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 90% 40%, rgba(245, 158, 11, 0.06), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 10% 80%, rgba(14, 165, 233, 0.06), transparent 70%);
   background-attachment: fixed;
-  line-height: 1.6;
+  line-height: 1.55;
+  font-size: 15px;
 }
 
-/* Container */
+/* Responsive Container */
 .site-container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
   padding-right: 24px;
+}
+
+@media (max-width: 768px) {
+  .site-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* Typography Utility */
@@ -71,63 +79,80 @@ h1, h2, h3, h4, h5, h6 {
 .text-gradient-gold {
   background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-white {
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glass Card */
+/* Responsive Glass Card */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-card);
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
   border-color: var(--border-hover);
   background: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9), 0 0 30px -10px rgba(234, 179, 8, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 25px -8px rgba(234, 179, 8, 0.2);
 }
 
-/* Buttons */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+}
+
+/* Standard High-Converting Primary Buttons */
 .btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   background: linear-gradient(135deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
   color: #08090e;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.125rem;
-  padding: 18px 38px;
-  border-radius: 16px;
+  font-size: 1rem;
+  padding: 15px 30px;
+  border-radius: 14px;
   text-decoration: none;
   border: 1px solid rgba(254, 240, 138, 0.9);
-  box-shadow: 0 12px 30px -8px rgba(234, 179, 8, 0.5), 0 0 20px -2px rgba(234, 179, 8, 0.3);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -6px rgba(234, 179, 8, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   letter-spacing: -0.01em;
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 40px -8px rgba(234, 179, 8, 0.7), 0 0 30px 2px rgba(253, 224, 71, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -6px rgba(234, 179, 8, 0.6);
   background: linear-gradient(135deg, #fef08a 0%, #fde047 50%, #eab308 100%);
 }
 
 .btn-gold:active {
-  transform: translateY(1px) scale(0.99);
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  .btn-gold {
+    padding: 13px 20px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
 }
 
 .btn-secondary-pill {
@@ -135,72 +160,68 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   color: #f8fafc;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.95rem;
-  padding: 12px 24px;
+  font-size: 0.875rem;
+  padding: 10px 20px;
   border-radius: 9999px;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btn-secondary-pill:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 /* Badge Pills */
 .pill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
+  gap: 6px;
+  padding: 5px 12px;
   border-radius: 9999px;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f1f5f9;
 }
 
 .pill-badge-gold {
-  background: rgba(234, 179, 8, 0.12);
-  border: 1px solid rgba(234, 179, 8, 0.3);
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.25);
   color: #fde047;
 }
 
 .pill-badge-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   color: #6ee7b7;
 }
 
 .pill-badge-sky {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   color: #7dd3fc;
 }
 
-/* Section Wrapper */
+/* Section Spacing */
 .section-wrapper {
-  padding: 100px 0;
+  padding: 80px 0;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 @media (max-width: 768px) {
   .section-wrapper {
-    padding: 64px 0;
-  }
-  .site-container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 44px 0;
   }
 }

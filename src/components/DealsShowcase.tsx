@@ -19,21 +19,21 @@ export const DealsShowcase = () => {
       <div className="site-container">
         
         {/* Header */}
-        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 64px auto" }}>
-          <div className="pill-badge pill-badge-gold" style={{ marginBottom: "16px" }}>
+        <div className="deals-header-box">
+          <div className="pill-badge pill-badge-gold" style={{ marginBottom: "12px" }}>
             Core Value Proposition
           </div>
 
-          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
+          <h2 className="deals-title">
             THE GIVEAWAYS GET THE ATTENTION. <br />
             <span className="text-gradient-gold">THE DEALS KEEP YOU HERE.</span>
           </h2>
 
-          <div style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
-            <p style={{ marginBottom: "12px" }}>
+          <div className="deals-subtitle">
+            <p style={{ marginBottom: "8px" }}>
               Inside the community, selected vendors release limited-time offers on electronics. When a deal goes live, members get the details through Telegram.
             </p>
-            <p style={{ color: "#94a3b8", fontSize: "14px" }}>
+            <p style={{ color: "#94a3b8", fontSize: "12.5px" }}>
               Some offers may disappear quickly when promotional pricing ends or inventory sells out.
             </p>
           </div>
@@ -46,27 +46,27 @@ export const DealsShowcase = () => {
             return (
               <div key={idx} className="glass-card deal-card">
                 <div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
                     <div className="deal-icon-badge">
-                      <IconComponent style={{ width: "22px", height: "22px", color: "#fde047" }} />
+                      <IconComponent style={{ width: "18px", height: "18px", color: "#fde047" }} />
                     </div>
-                    <span style={{ fontSize: "11px", fontFamily: "var(--font-mono)", color: "#94a3b8", background: "rgba(255,255,255,0.06)", padding: "4px 10px", borderRadius: "6px" }}>
+                    <span style={{ fontSize: "10px", fontFamily: "var(--font-mono)", color: "#94a3b8", background: "rgba(255,255,255,0.06)", padding: "3px 8px", borderRadius: "4px" }}>
                       CATEGORY 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#ffffff", marginBottom: "10px", letterSpacing: "-0.02em" }}>
+                  <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#ffffff", marginBottom: "6px", letterSpacing: "-0.01em" }}>
                     {cat.name}
                   </h3>
 
-                  <p style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: 1.6 }}>
+                  <p style={{ fontSize: "13px", color: "#cbd5e1", lineHeight: 1.55 }}>
                     {cat.desc}
                   </p>
                 </div>
 
-                <div style={{ paddingTop: "16px", marginTop: "24px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "12px", color: "#94a3b8" }}>
+                <div style={{ paddingTop: "12px", marginTop: "16px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "11.5px", color: "#94a3b8" }}>
                   <span>Up to 50% on selected stock</span>
-                  <ArrowUpRight style={{ width: "16px", height: "16px", color: "#fde047" }} />
+                  <ArrowUpRight style={{ width: "14px", height: "14px", color: "#fde047" }} />
                 </div>
               </div>
             );
@@ -74,38 +74,78 @@ export const DealsShowcase = () => {
         </div>
 
         {/* Footnote */}
-        <div style={{ textAlign: "center", fontSize: "12px", color: "#94a3b8", maxWidth: "600px", margin: "40px auto 0 auto" }}>
+        <div style={{ textAlign: "center", fontSize: "11px", color: "#94a3b8", maxWidth: "600px", margin: "24px auto 0 auto", lineHeight: 1.5 }}>
           Vendor inventory and deals drop spontaneously. All members receive Telegram push notifications simultaneously.
         </div>
 
       </div>
 
       <style jsx>{`
+        .deals-header-box {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 40px auto;
+        }
+        @media (max-width: 768px) {
+          .deals-header-box {
+            margin-bottom: 24px;
+          }
+        }
+        .deals-title {
+          font-size: 1.6rem;
+          font-weight: 900;
+          margin-bottom: 12px;
+          letter-spacing: -0.03em;
+          line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+          .deals-title {
+            font-size: 2.3rem;
+            margin-bottom: 16px;
+          }
+        }
+        .deals-subtitle {
+          font-size: 0.925rem;
+          color: #cbd5e1;
+          line-height: 1.55;
+        }
+        @media (min-width: 768px) {
+          .deals-subtitle {
+            font-size: 1.05rem;
+          }
+        }
         .deals-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 24px;
+          gap: 14px;
         }
         @media (min-width: 640px) {
           .deals-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
           }
         }
         @media (min-width: 1024px) {
           .deals-grid {
             grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
           }
         }
         .deal-card {
-          padding: 28px;
+          padding: 18px 16px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
         }
+        @media (min-width: 768px) {
+          .deal-card {
+            padding: 24px;
+          }
+        }
         .deal-icon-badge {
-          width: 48px;
-          height: 48px;
-          border-radius: 12px;
+          width: 38px;
+          height: 38px;
+          border-radius: 10px;
           background: rgba(234, 179, 8, 0.12);
           border: 1px solid rgba(234, 179, 8, 0.25);
           display: flex;
