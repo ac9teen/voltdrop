@@ -1,6 +1,6 @@
 /**
  * VoltDrop Private Electronics Community Configuration
- * Keep business name, checkout URL, Telegram URL, giveaway terms URL,
+ * Keep business name, UPI parameters, Telegram URL, giveaway terms URL,
  * and other configurable parameters here for easy replacement.
  */
 
@@ -8,14 +8,19 @@ export const SITE_CONFIG = {
   communityName: "VoltDrop",
   communityFullName: "VoltDrop VIP Private Electronics Community",
   membershipFee: "₹299",
+  membershipAmount: 299,
   currency: "INR",
   pricingType: "One-time membership fee",
   
-  // Replace with live Razorpay / Stripe / Payment Gateway link
-  checkoutUrl: "https://rzp.io/l/voltdrop-membership",
+  // UPI Payment Configuration
+  upiId: "voltdrop.vip@icici",
+  merchantName: "VoltDrop VIP Community",
   
-  // Replace with private Telegram group / channel invite link
-  telegramInviteUrl: "https://t.me/+voltdrop_private_drops",
+  // Checkout URL / Modal Route
+  checkoutUrl: "/checkout",
+  
+  // Private Telegram Invite Link
+  telegramInviteUrl: "https://t.me/+voltdrop_vip_private_drops",
   
   // Support & contact
   supportEmail: "concierge@voltdrop.vip",

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
@@ -15,8 +17,11 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { GiveawayDisclosure } from "@/components/GiveawayDisclosure";
 import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { PaymentModal } from "@/components/PaymentModal";
 
 export default function Home() {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#070709] text-slate-100 overflow-x-hidden">
       {/* Top Banner */}
@@ -69,6 +74,13 @@ export default function Home() {
 
       {/* Mobile Sticky CTA */}
       <StickyMobileCTA />
+
+      {/* Interactive Payment Modal */}
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={() => setIsPaymentOpen(false)}
+      />
     </div>
   );
 }
+
