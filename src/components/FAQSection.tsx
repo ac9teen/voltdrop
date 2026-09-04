@@ -43,57 +43,93 @@ export const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 relative bg-[#030712] border-t border-slate-800/80">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="section-wrapper" style={{ backgroundColor: "rgba(12, 15, 23, 0.4)" }}>
+      <div className="site-container" style={{ maxWidth: "900px" }}>
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
+        <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <div className="pill-badge" style={{ marginBottom: "16px" }}>
+            <HelpCircle style={{ width: "15px", height: "15px" }} />
             Clear Answers
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "16px", letterSpacing: "-0.03em" }}>
             FREQUENTLY ASKED QUESTIONS
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300">
+          <p style={{ fontSize: "1.125rem", color: "#cbd5e1" }}>
             Everything you need to know about the {SITE_CONFIG.communityName} community, deals, and giveaway mechanics.
           </p>
         </div>
 
-        {/* Accordion */}
-        <div className="space-y-4">
+        {/* Accordion List */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className={`rounded-2xl border transition-all duration-200 shadow-lg ${
-                  isOpen
-                    ? "bg-slate-900 border-amber-500/40"
-                    : "bg-slate-900/70 border-slate-800 hover:border-slate-700"
-                }`}
+                className="faq-item"
+                style={{
+                  background: isOpen ? "rgba(22, 28, 44, 0.95)" : "rgba(18, 22, 34, 0.8)",
+                  border: isOpen ? "1px solid rgba(234, 179, 8, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  transition: "all 0.2s ease",
+                  boxShadow: isOpen ? "0 15px 30px -10px rgba(0,0,0,0.8)" : "none",
+                }}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full px-7 py-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  style={{
+                    width: "100%",
+                    padding: "24px 28px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "16px",
+                    background: "none",
+                    border: "none",
+                    color: "#ffffff",
+                    textAlign: "left",
+                    cursor: "pointer",
+                    fontSize: "1.125rem",
+                    fontWeight: 700,
+                    fontFamily: "var(--font-heading)",
+                  }}
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-white leading-snug">
-                    {faq.q}
-                  </span>
+                  <span style={{ lineHeight: 1.4 }}>{faq.q}</span>
                   <div
-                    className={`w-9 h-9 rounded-full border border-slate-700 bg-slate-800 flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-amber-500/20 border-amber-500/40" : ""
-                    }`}
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      background: isOpen ? "rgba(234, 179, 8, 0.2)" : "rgba(255, 255, 255, 0.06)",
+                      border: isOpen ? "1px solid rgba(234, 179, 8, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "transform 0.3s ease",
+                    }}
                   >
-                    <ChevronDown className={`w-4 h-4 ${isOpen ? "text-amber-400" : "text-slate-300"}`} />
+                    <ChevronDown style={{ width: "18px", height: "18px", color: isOpen ? "#fde047" : "#cbd5e1" }} />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-7 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4">
+                  <div
+                    style={{
+                      padding: "0 28px 24px 28px",
+                      fontSize: "15px",
+                      color: "#cbd5e1",
+                      lineHeight: 1.6,
+                      borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                      paddingTop: "16px",
+                    }}
+                  >
                     {faq.a}
                   </div>
                 )}

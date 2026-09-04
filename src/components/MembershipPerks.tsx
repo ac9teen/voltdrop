@@ -34,70 +34,100 @@ export const MembershipPerks = () => {
   ];
 
   return (
-    <section id="what-you-get" className="py-20 lg:py-28 relative border-t border-slate-800/80 bg-slate-950/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="what-you-get" className="section-wrapper" style={{ backgroundColor: "rgba(12, 15, 23, 0.4)" }}>
+      <div className="site-container">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">
+        {/* Header */}
+        <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 64px auto" }}>
+          <div className="pill-badge" style={{ marginBottom: "16px" }}>
             Membership Value Breakdown
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
             {SITE_CONFIG.membershipFee} GETS YOU INSIDE.
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
             You&apos;re not paying {SITE_CONFIG.membershipFee} for an iPhone. You&apos;re joining a private electronics community built around finding great deals — with iPhone giveaways and other promotions along the way.
           </p>
         </div>
 
-        {/* 5 Distinct Cards: 2 on top, 3 on bottom for balanced luxury look */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        {/* 5 Distinct Cards */}
+        <div className="perks-grid">
           {perks.map((perk, idx) => {
             const IconComponent = perk.icon;
             return (
-              <div
-                key={idx}
-                className="relative rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-xl group"
-              >
+              <div key={idx} className="glass-card perk-card">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-6 h-6 text-amber-400" />
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
+                    <div className="icon-badge">
+                      <IconComponent style={{ width: "22px", height: "22px", color: "#fde047" }} />
                     </div>
-                    <span className="text-xs font-mono text-slate-400 font-semibold px-2 py-0.5 rounded bg-slate-800 border border-slate-700">
+                    <span style={{ fontSize: "11px", fontFamily: "var(--font-mono)", color: "#94a3b8", background: "rgba(255,255,255,0.06)", padding: "4px 10px", borderRadius: "6px" }}>
                       PERK 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-extrabold text-white tracking-tight mb-3">
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 800, color: "#ffffff", marginBottom: "12px", letterSpacing: "-0.02em" }}>
                     {perk.badge}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                  <p style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: 1.6 }}>
                     {perk.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                  <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
+                <div style={{ paddingTop: "20px", marginTop: "24px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "12px" }}>
+                  <span style={{ color: "#6ee7b7", display: "flex", alignItems: "center", gap: "6px", fontWeight: 600 }}>
+                    <CheckCircle2 style={{ width: "14px", height: "14px" }} />
                     Included with {SITE_CONFIG.membershipFee}
                   </span>
-                  <span className="font-mono text-slate-400">Instant Access</span>
+                  <span style={{ color: "#94a3b8", fontFamily: "var(--font-mono)" }}>Instant Access</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Contextual disclaimer directly below the benefits */}
-        <div className="text-center text-xs text-slate-400 max-w-xl mx-auto">
+        {/* Footnote */}
+        <div style={{ textAlign: "center", fontSize: "12px", color: "#94a3b8", maxWidth: "600px", margin: "32px auto 0 auto" }}>
           *Note: Not every product is 50% off. Discount levels strictly depend on individual vendor allocations and remaining inventory.
         </div>
 
       </div>
+
+      <style jsx>{`
+        .perks-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        @media (min-width: 640px) {
+          .perks-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 1024px) {
+          .perks-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .perk-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .icon-badge {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: rgba(234, 179, 8, 0.12);
+          border: 1px solid rgba(234, 179, 8, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </section>
   );
 };

@@ -2,136 +2,123 @@
 
 import React from "react";
 import Image from "next/image";
-import { Send, Bell, Flame, Zap, Shield, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Send, Bell, Flame, Zap, Shield, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/config/site";
 
 export const TelegramWall = () => {
   return (
-    <section id="telegram-drops" className="py-20 lg:py-28 relative overflow-hidden border-t border-slate-800/80 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="telegram-drops" className="section-wrapper">
+      <div className="site-container">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-xs font-bold uppercase tracking-wider text-sky-400 mb-4">
-            <Send className="w-3.5 h-3.5" />
+        <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 64px auto" }}>
+          <div className="pill-badge pill-badge-sky" style={{ marginBottom: "16px" }}>
+            <Send style={{ width: "14px", height: "14px" }} />
             Live Telegram Feed Preview
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
             WHERE THE DROPS ACTUALLY HAPPEN.
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
             Inside the private channel, selected vendors push limited-time pricing and flash allocations. Members get instant push notifications before stock runs out.
           </p>
         </div>
 
-        {/* Telegram Showcase Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        {/* Showcase Grid */}
+        <div className="telegram-grid">
           
-          {/* Column 1: Vertical Telegram Phone Screenshot */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[360px] rounded-[42px] p-3.5 bg-gradient-to-b from-slate-700 via-slate-900 to-black border-2 border-slate-600/80 shadow-2xl shadow-sky-950/40">
-              {/* Top speaker notch */}
-              <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-20" />
-              
-              {/* Screen container */}
-              <div className="relative aspect-[9/16] w-full rounded-[32px] overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
+          {/* Phone Mockup */}
+          <div className="telegram-phone-col">
+            <div className="phone-mockup">
+              <div className="phone-notch" />
+              <div className="phone-screen">
                 <Image
                   src="/images/telegram-preview-1.jpg"
-                  alt="VoltDrop VIP Deals Telegram Channel Feed"
+                  alt="VoltDrop VIP Deals Telegram Feed"
                   fill
-                  sizes="(max-width: 768px) 360px, 360px"
-                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 320px, 360px"
+                  style={{ objectFit: "cover", objectPosition: "top" }}
                 />
               </div>
-
-              {/* Floating status tag */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-xl p-3 shadow-xl flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="font-bold text-white">Channel Alerts Active</span>
+              <div className="phone-footer-pill">
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
+                  <span style={{ fontWeight: 700, color: "#ffffff", fontSize: "12px" }}>Channel Alerts Active</span>
                 </div>
-                <span className="text-sky-400 font-bold font-mono">Telegram Push</span>
+                <span style={{ color: "#38bdf8", fontWeight: 800, fontSize: "11px", fontFamily: "var(--font-mono)" }}>Telegram Push</span>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Live Drop Cards */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          {/* Right: Drop Feed Cards */}
+          <div className="telegram-cards-col">
             
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-2">
-              <Bell className="w-4 h-4 text-amber-400" />
-              Sample Deals Pushed to Members
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.06em", display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+              <Bell style={{ width: "16px", height: "16px", color: "#fde047" }} />
+              Sample Deals Pushed Directly to Members
             </div>
 
-            {/* Telegram simulated drop card 1 */}
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition-all shadow-xl">
-              <div className="flex items-center justify-between mb-2.5">
-                <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase">
-                    ⚡ Drop Alert
+            {/* Drop Card 1 */}
+            <div className="glass-card drop-card">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span className="pill-badge-gold" style={{ fontSize: "11px", padding: "2px 10px" }}>
+                    ⚡ DROP ALERT
                   </span>
-                  <span className="text-xs text-slate-400 font-mono">Today, 10:05 AM</span>
+                  <span style={{ fontSize: "12px", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>Today, 10:05 AM</span>
                 </div>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  42% OFF
+                <span className="pill-badge-emerald" style={{ fontSize: "11px", padding: "2px 8px" }}>
+                  42% OFF MSRP
                 </span>
               </div>
-              <h4 className="text-base sm:text-lg font-bold text-white mb-1.5">
+              <h4 style={{ fontSize: "1.125rem", fontWeight: 800, color: "#ffffff", marginBottom: "6px" }}>
                 Sony WH-1000XM5 Wireless Noise Cancelling Headphones
               </h4>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Selected vendor authorized liquidation. Sealed black &amp; silver units. Direct ordering link active for verified members.
+              <p style={{ fontSize: "13px", color: "#cbd5e1", lineHeight: 1.5, marginBottom: "14px" }}>
+                Authorized vendor liquidation batch. Black &amp; silver models available. Direct checkout links pushed live.
               </p>
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-800 text-xs">
-                <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 font-medium">
-                  🔥 432 reactions
-                </span>
-                <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 font-medium">
-                  ⚡ 189 claimed
-                </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px" }}>
+                <span className="pill-badge" style={{ fontSize: "11px", padding: "4px 10px" }}>🔥 432 reactions</span>
+                <span className="pill-badge" style={{ fontSize: "11px", padding: "4px 10px" }}>⚡ 189 claimed</span>
               </div>
             </div>
 
-            {/* Telegram simulated drop card 2 */}
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition-all shadow-xl">
-              <div className="flex items-center justify-between mb-2.5">
-                <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30 uppercase">
-                    🔥 Flash Deal
+            {/* Drop Card 2 */}
+            <div className="glass-card drop-card">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span className="pill-badge-sky" style={{ fontSize: "11px", padding: "2px 10px" }}>
+                    🔥 FLASH ALLOCATION
                   </span>
-                  <span className="text-xs text-slate-400 font-mono">Today, 9:52 AM</span>
+                  <span style={{ fontSize: "12px", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>Today, 9:52 AM</span>
                 </div>
-                <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                <span className="pill-badge-emerald" style={{ fontSize: "11px", padding: "2px 8px" }}>
                   Up to 35% OFF
                 </span>
               </div>
-              <h4 className="text-base sm:text-lg font-bold text-white mb-1.5">
+              <h4 style={{ fontSize: "1.125rem", fontWeight: 800, color: "#ffffff", marginBottom: "6px" }}>
                 Apple AirPods Pro (2nd Gen) with MagSafe Case (USB-C)
               </h4>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Exclusive surplus batch from partner distributor. Limited allocated quantity.
+              <p style={{ fontSize: "13px", color: "#cbd5e1", lineHeight: 1.5, marginBottom: "14px" }}>
+                Surplus distributor inventory liquidation. Limited quantities allocated for community members.
               </p>
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-800 text-xs">
-                <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 font-medium">
-                  ⚡ 510 reactions
-                </span>
-                <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 font-medium">
-                  🏷️ Fast shipping
-                </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px" }}>
+                <span className="pill-badge" style={{ fontSize: "11px", padding: "4px 10px" }}>⚡ 510 reactions</span>
+                <span className="pill-badge" style={{ fontSize: "11px", padding: "4px 10px" }}>🏷️ Fast Dispatch</span>
               </div>
             </div>
 
-            {/* Joining Callout */}
-            <div className="p-5 rounded-2xl bg-slate-900 border border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="space-y-0.5">
-                <div className="text-sm font-bold text-white flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-emerald-400" />
-                  Instant Telegram Channel Dispatch
+            {/* Banner */}
+            <div className="telegram-join-banner">
+              <div>
+                <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Shield style={{ width: "16px", height: "16px", color: "#38bdf8" }} />
+                  Direct Telegram Link Dispatch
                 </div>
-                <p className="text-xs text-slate-300">
-                  Access instructions and private join links dispatched immediately after checkout.
+                <p style={{ fontSize: "12px", color: "#94a3b8", margin: 0 }}>
+                  Channel access details provided immediately upon checkout.
                 </p>
               </div>
 
@@ -139,10 +126,11 @@ export const TelegramWall = () => {
                 href={SITE_CONFIG.checkoutUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cta-gold text-xs py-3 px-5 shrink-0 text-center font-bold"
+                className="btn-gold"
+                style={{ padding: "10px 20px", fontSize: "13px", borderRadius: "10px", whiteSpace: "nowrap" }}
               >
                 <span>Join for {SITE_CONFIG.membershipFee}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight style={{ width: "14px", height: "14px" }} />
               </a>
             </div>
 
@@ -151,6 +139,95 @@ export const TelegramWall = () => {
         </div>
 
       </div>
+
+      <style jsx>{`
+        .telegram-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        @media (min-width: 1024px) {
+          .telegram-grid {
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 56px;
+          }
+        }
+        .telegram-phone-col {
+          display: flex;
+          justify-content: center;
+        }
+        .phone-mockup {
+          position: relative;
+          width: 100%;
+          max-width: 340px;
+          border-radius: 40px;
+          padding: 12px;
+          background: linear-gradient(180deg, #334155 0%, #0f172a 100%);
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px -10px rgba(56, 189, 248, 0.3);
+        }
+        .phone-notch {
+          position: absolute;
+          top: 18px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 16px;
+          background: #000;
+          border-radius: 9999px;
+          z-index: 20;
+        }
+        .phone-screen {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 9/16;
+          border-radius: 30px;
+          overflow: hidden;
+          background: #08090e;
+        }
+        .phone-footer-pill {
+          position: absolute;
+          bottom: -16px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          background: rgba(18, 22, 34, 0.95);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 12px;
+          padding: 10px 14px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+        }
+        .telegram-cards-col {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .drop-card {
+          padding: 24px;
+        }
+        .telegram-join-banner {
+          background: rgba(18, 22, 34, 0.9);
+          border: 1px solid rgba(56, 189, 248, 0.25);
+          border-radius: 16px;
+          padding: 16px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+        @media (min-width: 640px) {
+          .telegram-join-banner {
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+      `}</style>
     </section>
   );
 };

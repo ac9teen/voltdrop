@@ -39,53 +39,48 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 lg:py-28 relative bg-slate-950/60 border-t border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="section-wrapper">
+      <div className="site-container">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">
+        {/* Header */}
+        <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 64px auto" }}>
+          <div className="pill-badge" style={{ marginBottom: "16px" }}>
             Simple 5-Step Process
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
             HOW IT WORKS
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300">
-            From checkout to Telegram alerts and community promotions in under 60 seconds.
+          <p style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
+            From checkout to Telegram deal alerts and community promotions in under 60 seconds.
           </p>
         </div>
 
-        {/* 5 Steps Grid: 3 on top row, 2 centered on bottom row for generous width and breathing room! */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Top 3 Steps */}
+        <div className="steps-top-grid">
           {steps.slice(0, 3).map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div
-                key={idx}
-                className="relative rounded-2xl bg-slate-900/90 border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl group"
-              >
+              <div key={idx} className="glass-card step-card">
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-3xl font-black font-mono text-amber-400">
-                      {item.step}
-                    </span>
-                    <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                      <Icon className="w-5 h-5" />
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+                    <span className="step-number">{item.step}</span>
+                    <div className="step-icon-badge">
+                      <Icon style={{ width: "20px", height: "20px", color: "#fde047" }} />
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-tight mb-2 group-hover:text-amber-300 transition-colors">
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 900, color: "#ffffff", marginBottom: "10px", letterSpacing: "-0.01em" }}>
                     {item.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  <p style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: 1.6 }}>
                     {item.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
+                <div style={{ marginTop: "24px", paddingTop: "16px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", fontSize: "11px", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>
                   Step {idx + 1} of 5
                 </div>
               </div>
@@ -93,35 +88,30 @@ export const HowItWorks = () => {
           })}
         </div>
 
-        {/* Bottom 2 steps: Centered and wide */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
+        {/* Bottom 2 Steps: Wide & Centered */}
+        <div className="steps-bottom-grid">
           {steps.slice(3, 5).map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div
-                key={idx + 3}
-                className="relative rounded-2xl bg-slate-900/90 border border-slate-800 p-7 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl group"
-              >
+              <div key={idx + 3} className="glass-card step-card">
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-3xl font-black font-mono text-amber-400">
-                      {item.step}
-                    </span>
-                    <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                      <Icon className="w-5 h-5" />
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+                    <span className="step-number">{item.step}</span>
+                    <div className="step-icon-badge">
+                      <Icon style={{ width: "20px", height: "20px", color: "#fde047" }} />
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-tight mb-2 group-hover:text-amber-300 transition-colors">
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 900, color: "#ffffff", marginBottom: "10px", letterSpacing: "-0.01em" }}>
                     {item.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  <p style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: 1.6 }}>
                     {item.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
+                <div style={{ marginTop: "24px", paddingTop: "16px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", fontSize: "11px", color: "#94a3b8", fontFamily: "var(--font-mono)" }}>
                   Step {idx + 4} of 5
                 </div>
               </div>
@@ -129,20 +119,69 @@ export const HowItWorks = () => {
           })}
         </div>
 
-        {/* Action Prompt */}
-        <div className="text-center">
+        {/* Action Button */}
+        <div style={{ textAlign: "center", marginTop: "56px" }}>
           <a
             href={SITE_CONFIG.checkoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-cta-gold inline-flex"
+            className="btn-gold"
           >
             <span>START WITH STEP 01 — {SITE_CONFIG.membershipFee}</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight style={{ width: "20px", height: "20px" }} />
           </a>
         </div>
 
       </div>
+
+      <style jsx>{`
+        .steps-top-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+          margin-bottom: 24px;
+        }
+        @media (min-width: 768px) {
+          .steps-top-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .steps-bottom-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+          max-width: 820px;
+          margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+          .steps-bottom-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        .step-card {
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .step-number {
+          font-size: 2.5rem;
+          font-weight: 900;
+          font-family: var(--font-mono);
+          color: #fde047;
+          line-height: 1;
+        }
+        .step-icon-badge {
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          background: rgba(234, 179, 8, 0.12);
+          border: 1px solid rgba(234, 179, 8, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </section>
   );
 };

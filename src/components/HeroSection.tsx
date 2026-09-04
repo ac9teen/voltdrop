@@ -7,188 +7,319 @@ import { SITE_CONFIG } from "@/config/site";
 
 export const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-sky-500/15 via-amber-500/10 to-transparent blur-[140px] rounded-full pointer-events-none -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+    <section className="section-wrapper" style={{ paddingTop: "80px", paddingBottom: "100px", borderTop: "none" }}>
+      <div className="site-container">
+        <div className="hero-grid">
           
-          {/* Left Column: Headlines & High-Converting Pitch */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
+          {/* Left Column */}
+          <div className="hero-content">
             
-            {/* Top Launch Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-sm mb-6">
-              <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                Official Private Community Launch
-              </span>
-              <span className="text-slate-500">•</span>
-              <span className="text-xs font-bold text-amber-400 font-mono">
-                {SITE_CONFIG.membershipFee}
-              </span>
+            {/* Top Pill Badge */}
+            <div className="pill-badge pill-badge-gold" style={{ marginBottom: "24px" }}>
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#fde047", display: "inline-block" }} />
+              <span>Official Community Launch</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontWeight: 800 }}>{SITE_CONFIG.membershipFee}</span>
             </div>
 
             {/* Headline verbatim */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08] mb-5">
+            <h1 className="hero-title">
               🍎 WE&apos;RE GIVING AWAY <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-white">
-                iPHONE 17 PROs.
-              </span>
+              <span className="text-gradient-gold">iPHONE 17 PROs.</span>
             </h1>
 
             {/* Subheadline verbatim */}
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium tracking-tight mb-8 leading-relaxed max-w-2xl">
+            <p className="hero-subtitle">
               And we&apos;re building a private electronics community while we&apos;re at it.
             </p>
 
             {/* Prominently displayed ratio card */}
-            <div className="w-full bg-slate-900/80 border border-slate-700/80 rounded-2xl p-6 sm:p-7 mb-8 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-amber-400" />
+            <div className="ratio-card">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                <span style={{ fontSize: "12px", fontWeight: 800, color: "#fde047", textTransform: "uppercase", letterSpacing: "0.06em", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <Sparkles style={{ width: "16px", height: "16px" }} />
                   THE GIVEAWAY SYSTEM
                 </span>
-                <span className="text-xs font-mono font-semibold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
-                  100% Mathematical
+                <span className="pill-badge" style={{ fontSize: "11px", padding: "2px 10px", background: "rgba(255,255,255,0.05)" }}>
+                  Auditable Formula
                 </span>
               </div>
 
-              {/* Bold Ratio Callout */}
-              <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight mb-4">
+              <div className="ratio-headline">
                 FOR EVERY 100 ELIGIBLE PARTICIPANTS → 1 iPHONE 17 PRO
               </div>
 
-              {/* Milestone breakdown verbatim */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-slate-800 font-mono text-xs sm:text-sm">
-                <div className="flex items-center justify-between sm:justify-start gap-2 bg-slate-950/70 px-3.5 py-2.5 rounded-xl border border-slate-800">
-                  <span className="text-slate-300 font-medium">100 participants</span>
-                  <span className="text-slate-500">→</span>
-                  <span className="font-bold text-amber-400">1 iPhone 17 Pro</span>
+              {/* Milestone sequence verbatim */}
+              <div className="milestone-ticker">
+                <div className="ticker-pill">
+                  <span style={{ color: "#94a3b8" }}>100 participants</span>
+                  <span style={{ color: "#64748b" }}>→</span>
+                  <span style={{ color: "#fde047", fontWeight: 700 }}>1 iPhone 17 Pro</span>
                 </div>
-                <div className="flex items-center justify-between sm:justify-start gap-2 bg-slate-950/70 px-3.5 py-2.5 rounded-xl border border-slate-800">
-                  <span className="text-slate-300 font-medium">200 participants</span>
-                  <span className="text-slate-500">→</span>
-                  <span className="font-bold text-amber-400">2 iPhone 17 Pros</span>
+                <div className="ticker-pill">
+                  <span style={{ color: "#94a3b8" }}>200 participants</span>
+                  <span style={{ color: "#64748b" }}>→</span>
+                  <span style={{ color: "#fde047", fontWeight: 700 }}>2 iPhone 17 Pros</span>
                 </div>
-                <div className="flex items-center justify-between sm:justify-start gap-2 bg-slate-950/70 px-3.5 py-2.5 rounded-xl border border-slate-800">
-                  <span className="text-slate-300 font-medium">300 participants</span>
-                  <span className="text-slate-500">→</span>
-                  <span className="font-bold text-amber-400">3 iPhone 17 Pros</span>
+                <div className="ticker-pill">
+                  <span style={{ color: "#94a3b8" }}>300 participants</span>
+                  <span style={{ color: "#64748b" }}>→</span>
+                  <span style={{ color: "#fde047", fontWeight: 700 }}>3 iPhone 17 Pros</span>
                 </div>
               </div>
             </div>
 
-            {/* Explanation paragraph verbatim */}
-            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
-              Join our private electronics community for <strong className="text-white font-bold">{SITE_CONFIG.membershipFee}</strong> and get access to limited-time electronics deals from selected vendors, with discounts of up to 50% on selected products.
+            {/* Value pitch verbatim */}
+            <p className="hero-pitch">
+              Join our private electronics community for <strong style={{ color: "#ffffff", fontWeight: 700 }}>{SITE_CONFIG.membershipFee}</strong> and get access to limited-time electronics deals from selected vendors, with discounts of up to 50% on selected products.
             </p>
 
-            {/* CTA Block */}
-            <div className="w-full sm:w-auto flex flex-col items-start gap-3">
+            {/* CTA & Disclosure */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
               <a
                 href={SITE_CONFIG.checkoutUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cta-gold w-full sm:w-auto text-center text-lg px-9 py-5 group"
+                className="btn-gold"
+                style={{ width: "fit-content" }}
               >
                 <span>JOIN THE COMMUNITY — {SITE_CONFIG.membershipFee}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+                <ArrowRight style={{ width: "20px", height: "20px" }} />
               </a>
 
-              {/* Mandatory Small Disclosure directly below CTA */}
-              <p className="text-xs text-slate-400 max-w-xl leading-relaxed mt-1">
+              <p className="hero-disclosure">
                 {SITE_CONFIG.membershipFee} is the membership fee for access to the private community and its deals. Giveaway participation is subject to eligibility and the official Giveaway Terms. Membership does not guarantee a prize.
               </p>
             </div>
 
-            {/* High-conversion trust highlights */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 w-full text-slate-400 text-xs font-medium">
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
+            {/* Mini Trust Highlights */}
+            <div className="hero-highlights">
+              <div className="highlight-item">
+                <Zap style={{ width: "18px", height: "18px", color: "#fde047" }} />
                 <span>Private Deal Drops</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Bell className="w-4 h-4 text-sky-400 shrink-0" />
-                <span>Telegram Drop Alerts</span>
+              <div className="highlight-item">
+                <Bell style={{ width: "18px", height: "18px", color: "#38bdf8" }} />
+                <span>Telegram Alerts</span>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Auditable Terms</span>
+              <div className="highlight-item">
+                <ShieldCheck style={{ width: "18px", height: "18px", color: "#10b981" }} />
+                <span>Transparent Rules</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Dominant iPhone 17 Pro Visual */}
-          <div className="lg:col-span-5 relative flex justify-center items-center">
-            
-            {/* Ambient Back Glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 via-sky-500/20 to-transparent blur-3xl -z-10 rounded-full scale-110" />
+          {/* Right Column: Hero Visual */}
+          <div className="hero-visual-col">
+            <div className="hero-visual-card">
+              <div className="hero-img-container">
+                <Image
+                  src="/images/hero-iphone17.jpg"
+                  alt="Apple iPhone 17 Pro Natural Titanium Flagship"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
+                
+                <div className="visual-top-tag">
+                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#fde047" }} />
+                  Target Giveaway Prize: iPhone 17 Pro
+                </div>
 
-            <div className="relative w-full max-w-[500px]">
-              
-              {/* Main iPhone 17 Pro Render */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-900/90 shadow-2xl p-3 group">
-                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-slate-950">
-                  <Image
-                    src="/images/hero-iphone17.jpg"
-                    alt="Apple iPhone 17 Pro Natural Titanium Flagship"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  
-                  {/* Subtle inner gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Overlaid Pill Badge */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-xs font-semibold text-white">
-                    <span className="w-2 h-2 rounded-full bg-amber-400" />
-                    Target Giveaway Prize: iPhone 17 Pro
+                <div className="visual-bottom-meta">
+                  <div>
+                    <div style={{ fontSize: "10px", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase" }}>GIVEAWAY RATIO</div>
+                    <div style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff" }}>1 iPhone : 100 Eligible Members</div>
                   </div>
-
-                  {/* Bottom Overlaid Metric */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl px-4 py-3">
-                    <div>
-                      <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                        GIVEAWAY FORMULA
-                      </div>
-                      <div className="text-sm font-bold text-white">
-                        1 iPhone : 100 Eligible Members
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                        COMMUNITY ACCESS
-                      </div>
-                      <div className="text-base font-extrabold text-amber-400 font-mono">
-                        {SITE_CONFIG.membershipFee}
-                      </div>
-                    </div>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: "10px", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase" }}>MEMBERSHIP</div>
+                    <div style={{ fontSize: "16px", fontWeight: 900, color: "#fde047", fontFamily: "var(--font-mono)" }}>{SITE_CONFIG.membershipFee}</div>
                   </div>
                 </div>
               </div>
-
-              {/* Floating Spec Tags */}
-              <div className="absolute -bottom-4 -left-3 hidden sm:flex items-center gap-2 bg-slate-900/95 border border-slate-700 px-4 py-2 rounded-xl shadow-xl backdrop-blur-md text-xs font-semibold text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Brand New Sealed Retail Units</span>
-              </div>
-
-              <div className="absolute -top-3 -right-3 hidden sm:flex items-center gap-2 bg-slate-900/95 border border-slate-700 px-4 py-2 rounded-xl shadow-xl backdrop-blur-md text-xs font-semibold text-slate-200">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span>Zero Scarcity Tricks • Real Offer</span>
-              </div>
-
             </div>
           </div>
 
         </div>
       </div>
+
+      <style jsx>{`
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        @media (min-width: 1024px) {
+          .hero-grid {
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 56px;
+          }
+        }
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero-title {
+          font-size: 2.75rem;
+          font-weight: 900;
+          letter-spacing: -0.04em;
+          margin-bottom: 20px;
+          line-height: 1.1;
+        }
+        @media (min-width: 768px) {
+          .hero-title {
+            font-size: 3.75rem;
+          }
+        }
+        @media (min-width: 1200px) {
+          .hero-title {
+            font-size: 4.5rem;
+          }
+        }
+        .hero-subtitle {
+          font-size: 1.25rem;
+          font-weight: 500;
+          color: #cbd5e1;
+          margin-bottom: 32px;
+          line-height: 1.4;
+        }
+        @media (min-width: 768px) {
+          .hero-subtitle {
+            font-size: 1.5rem;
+          }
+        }
+        .ratio-card {
+          width: 100%;
+          background: rgba(18, 22, 34, 0.9);
+          border: 1px solid rgba(234, 179, 8, 0.35);
+          border-radius: 20px;
+          padding: 24px;
+          margin-bottom: 32px;
+          box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px -10px rgba(234, 179, 8, 0.2);
+        }
+        .ratio-headline {
+          font-size: 1.25rem;
+          font-weight: 900;
+          color: #ffffff;
+          font-family: var(--font-heading);
+          letter-spacing: -0.02em;
+          margin-bottom: 16px;
+        }
+        @media (min-width: 640px) {
+          .ratio-headline {
+            font-size: 1.5rem;
+          }
+        }
+        .milestone-ticker {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          font-family: var(--font-mono);
+          font-size: 13px;
+        }
+        @media (min-width: 640px) {
+          .milestone-ticker {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .ticker-pill {
+          background: rgba(8, 9, 14, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 10px;
+          padding: 10px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 6px;
+        }
+        .hero-pitch {
+          font-size: 1.125rem;
+          color: #cbd5e1;
+          line-height: 1.6;
+          margin-bottom: 32px;
+          max-width: 620px;
+        }
+        .hero-disclosure {
+          font-size: 12px;
+          color: #94a3b8;
+          max-width: 580px;
+          line-height: 1.5;
+        }
+        .hero-highlights {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          width: 100%;
+          padding-top: 24px;
+          margin-top: 32px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          font-size: 13px;
+          font-weight: 600;
+          color: #cbd5e1;
+        }
+        .highlight-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .hero-visual-col {
+          display: flex;
+          justify-content: center;
+        }
+        .hero-visual-card {
+          width: 100%;
+          max-width: 480px;
+          border-radius: 28px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(18, 22, 34, 0.8);
+          padding: 12px;
+          box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px -10px rgba(56, 189, 248, 0.2);
+        }
+        .hero-img-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4/3;
+          border-radius: 20px;
+          overflow: hidden;
+          background: #000;
+        }
+        .visual-top-tag {
+          position: absolute;
+          top: 14px;
+          left: 14px;
+          background: rgba(8, 9, 14, 0.85);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          padding: 6px 14px;
+          border-radius: 9999px;
+          font-size: 11px;
+          font-weight: 700;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .visual-bottom-meta {
+          position: absolute;
+          bottom: 14px;
+          left: 14px;
+          right: 14px;
+          background: rgba(8, 9, 14, 0.85);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 14px;
+          padding: 12px 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      `}</style>
     </section>
   );
 };

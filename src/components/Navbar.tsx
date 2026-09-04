@@ -6,68 +6,112 @@ import { SITE_CONFIG } from "@/config/site";
 
 export const Navbar = () => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-[#030712]/90 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 40,
+        width: "100%",
+        backgroundColor: "rgba(8, 9, 14, 0.85)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+      }}
+    >
+      <div
+        className="site-container"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "80px",
+        }}
+      >
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-            <Zap className="w-5 h-5 text-slate-950 fill-current stroke-current" />
+        <a href="#" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+          <div
+            style={{
+              width: "44px",
+              height: "44px",
+              borderRadius: "12px",
+              background: "linear-gradient(135deg, #fde047 0%, #eab308 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 8px 20px rgba(234, 179, 8, 0.3)",
+            }}
+          >
+            <Zap style={{ width: "24px", height: "24px", color: "#08090e", fill: "currentColor" }} />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-black tracking-tight text-white font-mono">
-                VOLT<span className="text-amber-400">DROP</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "22px", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.03em", fontFamily: "var(--font-heading)" }}>
+                VOLT<span style={{ color: "#fde047" }}>DROP</span>
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20">
+              <span className="pill-badge-gold" style={{ fontSize: "10px", padding: "2px 8px" }}>
                 VIP
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 tracking-wide font-medium">
+            <p style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 500, margin: 0 }}>
               Private Electronics Community
             </p>
           </div>
         </a>
 
-        {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
-          <a href="#giveaway" className="hover:text-amber-400 transition-colors">
-            Giveaway Scale
-          </a>
-          <a href="#telegram-drops" className="hover:text-amber-400 transition-colors">
-            Telegram Drops
-          </a>
-          <a href="#recipients" className="hover:text-amber-400 transition-colors">
-            6 Winners Wall
-          </a>
-          <a href="#what-you-get" className="hover:text-amber-400 transition-colors">
-            What You Get
-          </a>
-          <a href="#how-it-works" className="hover:text-amber-400 transition-colors">
-            How It Works
-          </a>
-          <a href="#faq" className="hover:text-amber-400 transition-colors">
-            FAQ
-          </a>
+        {/* Navigation Links */}
+        <nav
+          style={{
+            display: "none",
+            gap: "32px",
+            fontSize: "14px",
+            fontWeight: 600,
+          }}
+          className="desktop-nav"
+        >
+          <a href="#giveaway" style={{ color: "#cbd5e1", textDecoration: "none" }}>Giveaway Scale</a>
+          <a href="#telegram-drops" style={{ color: "#cbd5e1", textDecoration: "none" }}>Telegram Feed</a>
+          <a href="#recipients" style={{ color: "#cbd5e1", textDecoration: "none" }}>6 Winners Wall</a>
+          <a href="#what-you-get" style={{ color: "#cbd5e1", textDecoration: "none" }}>What You Get</a>
+          <a href="#how-it-works" style={{ color: "#cbd5e1", textDecoration: "none" }}>How It Works</a>
+          <a href="#faq" style={{ color: "#cbd5e1", textDecoration: "none" }}>FAQ</a>
         </nav>
 
-        {/* Action Button */}
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex flex-col text-right">
-            <span className="text-xs text-slate-400">One-Time Fee</span>
-            <span className="text-sm font-extrabold text-amber-400 font-mono">{SITE_CONFIG.membershipFee}</span>
+        {/* Right CTA */}
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{ textAlign: "right", display: "none" }} className="nav-pricing">
+            <div style={{ fontSize: "11px", color: "#94a3b8" }}>One-Time Access</div>
+            <div style={{ fontSize: "15px", fontWeight: 800, color: "#fde047", fontFamily: "var(--font-mono)" }}>
+              {SITE_CONFIG.membershipFee}
+            </div>
           </div>
 
           <a
             href={SITE_CONFIG.checkoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md shadow-amber-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="btn-gold"
+            style={{
+              padding: "12px 24px",
+              fontSize: "14px",
+              borderRadius: "12px",
+            }}
           >
             <span>Join Now</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight style={{ width: "16px", height: "16px" }} />
           </a>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 1024px) {
+          .desktop-nav {
+            display: flex !important;
+          }
+          .nav-pricing {
+            display: block !important;
+          }
+        }
+      `}</style>
     </header>
   );
 };

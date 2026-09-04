@@ -7,86 +7,81 @@ import { SITE_CONFIG } from "@/config/site";
 
 export const EmotionalHook = () => {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden border-t border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl border border-slate-700/80 bg-slate-900/80 p-8 sm:p-12 lg:p-14 shadow-2xl backdrop-blur-xl">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <section className="section-wrapper">
+      <div className="site-container">
+        <div className="emotional-box">
+          <div className="emotional-grid">
             
-            {/* Left text column */}
-            <div className="lg:col-span-6 flex flex-col items-start">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold uppercase tracking-wider text-amber-400 mb-6">
-                <Sparkles className="w-3.5 h-3.5" />
-                Physical Product Reality
+            {/* Left Content */}
+            <div className="emotional-content">
+              <div className="pill-badge pill-badge-gold" style={{ marginBottom: "20px" }}>
+                <Sparkles style={{ width: "14px", height: "14px" }} />
+                Aspirational Reality
               </div>
 
-              {/* Headline verbatim */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+              <h2 className="emotional-title">
                 YOU COULD BE HOLDING <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-white">
-                  ONE OF THESE.
-                </span>
+                <span className="text-gradient-gold">ONE OF THESE.</span>
               </h2>
 
-              {/* Copy verbatim */}
-              <div className="space-y-3 text-lg sm:text-xl text-slate-200 font-normal leading-relaxed mb-8">
+              <div className="emotional-copy">
                 <p>We&apos;re building the community.</p>
                 <p>We&apos;re giving the community something back.</p>
-                <p className="text-white font-bold text-xl pt-2">
+                <p style={{ color: "#ffffff", fontWeight: 700, paddingTop: "8px" }}>
                   Every 100 eligible participants = another iPhone 17 Pro giveaway.
                 </p>
               </div>
 
-              {/* Credibility points */}
-              <div className="space-y-3.5 mb-10 text-sm sm:text-base text-slate-300">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+              <div className="emotional-points">
+                <div className="point-item">
+                  <CheckCircle2 style={{ width: "18px", height: "18px", color: "#10b981", flexShrink: 0 }} />
                   <span>Physical brand-new sealed retail iPhone units</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                <div className="point-item">
+                  <CheckCircle2 style={{ width: "18px", height: "18px", color: "#10b981", flexShrink: 0 }} />
                   <span>Delivered directly to verified eligible recipients</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                <div className="point-item">
+                  <CheckCircle2 style={{ width: "18px", height: "18px", color: "#10b981", flexShrink: 0 }} />
                   <span>Governed strictly by public Giveaway Terms</span>
                 </div>
               </div>
 
-              {/* CTA verbatim */}
-              <div className="w-full sm:w-auto">
+              <div style={{ width: "100%" }}>
                 <a
                   href={SITE_CONFIG.checkoutUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-cta-gold w-full sm:w-auto text-center text-lg px-9 py-5"
+                  className="btn-gold"
                 >
                   <span>JOIN FOR {SITE_CONFIG.membershipFee} →</span>
                 </a>
-                <p className="text-xs text-slate-400 mt-3 max-w-md leading-relaxed">
+                <p style={{ fontSize: "12px", color: "#94a3b8", marginTop: "12px", lineHeight: 1.5, maxWidth: "480px" }}>
                   Membership does not guarantee a winning outcome. Official Giveaway Terms apply to all participant qualification.
                 </p>
               </div>
             </div>
 
-            {/* Right visual column: Hand holding iPhone 17 Pro */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-2xl group">
+            {/* Right Image */}
+            <div className="emotional-img-col">
+              <div className="emotional-img-card">
                 <Image
                   src="/images/holding-iphone17.jpg"
                   alt="Holding brand new iPhone 17 Pro in hand"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  sizes="(max-width: 768px) 100vw, 550px"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                
-                <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md border border-slate-700 rounded-xl p-3.5 flex items-center justify-between">
+                <div className="img-overlay-bar">
                   <div>
-                    <span className="text-xs sm:text-sm font-bold text-white block">iPhone 17 Pro Retail Hardware</span>
-                    <span className="text-xs text-slate-400">Awarded to eligible community members</span>
+                    <span style={{ fontSize: "14px", fontWeight: 800, color: "#ffffff", display: "block" }}>
+                      iPhone 17 Pro Retail Hardware
+                    </span>
+                    <span style={{ fontSize: "12px", color: "#94a3b8" }}>
+                      Awarded to eligible community members
+                    </span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-amber-400 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
+                  <span className="pill-badge-gold" style={{ fontSize: "12px", padding: "4px 10px", fontFamily: "var(--font-mono)" }}>
                     1:100 Ratio
                   </span>
                 </div>
@@ -96,6 +91,96 @@ export const EmotionalHook = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .emotional-box {
+          background: rgba(18, 22, 34, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 32px;
+          padding: 48px;
+          box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+        }
+        @media (max-width: 768px) {
+          .emotional-box {
+            padding: 24px;
+          }
+        }
+        .emotional-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        @media (min-width: 1024px) {
+          .emotional-grid {
+            grid-template-columns: 1.1fr 0.9fr;
+          }
+        }
+        .emotional-content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .emotional-title {
+          font-size: 2.5rem;
+          font-weight: 900;
+          line-height: 1.15;
+          margin-bottom: 24px;
+          letter-spacing: -0.03em;
+        }
+        @media (min-width: 768px) {
+          .emotional-title {
+            font-size: 3.25rem;
+          }
+        }
+        .emotional-copy {
+          font-size: 1.125rem;
+          color: #cbd5e1;
+          line-height: 1.6;
+          margin-bottom: 28px;
+        }
+        .emotional-points {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 36px;
+          font-size: 14px;
+          color: #cbd5e1;
+        }
+        .point-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .emotional-img-col {
+          display: flex;
+          justify-content: center;
+        }
+        .emotional-img-card {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4/3;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: #000;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+        }
+        .img-overlay-bar {
+          position: absolute;
+          bottom: 14px;
+          left: 14px;
+          right: 14px;
+          background: rgba(8, 9, 14, 0.85);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 14px;
+          padding: 12px 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      `}</style>
     </section>
   );
 };

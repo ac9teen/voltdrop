@@ -4,27 +4,56 @@ import { SITE_CONFIG } from "@/config/site";
 
 export const AnnouncementBar = () => {
   return (
-    <aside aria-label="Announcement" className="w-full bg-gradient-to-r from-sky-950/60 via-amber-950/40 to-sky-950/60 border-b border-white/10 px-4 py-2 text-xs font-medium text-slate-300">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-ping" />
-          <span className="inline-flex items-center gap-1.5 font-semibold text-amber-300">
-            <Sparkles className="w-3.5 h-3.5" />
+    <aside
+      aria-label="Announcement"
+      style={{
+        background: "linear-gradient(90deg, rgba(8, 14, 28, 0.95), rgba(30, 20, 10, 0.95), rgba(8, 14, 28, 0.95))",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+        padding: "10px 24px",
+        fontSize: "13px",
+        fontWeight: 600,
+        color: "#cbd5e1",
+      }}
+    >
+      <div
+        className="site-container"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "12px",
+          padding: 0,
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              backgroundColor: "#fde047",
+              boxShadow: "0 0 10px #fde047",
+              display: "inline-block",
+            }}
+          />
+          <span style={{ color: "#fef08a", display: "inline-flex", alignItems: "center", gap: "6px", fontWeight: 700 }}>
+            <Sparkles style={{ width: "14px", height: "14px" }} />
             OFFICIAL TELEGRAM COMMUNITY
           </span>
-          <span className="hidden sm:inline text-slate-400">•</span>
-          <span className="hidden sm:inline text-slate-300">
+          <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>•</span>
+          <span style={{ color: "#ffffff" }}>
             {SITE_CONFIG.membershipFee} One-Time Membership Fee
           </span>
         </div>
 
-        <div className="flex items-center gap-3 text-[11px] text-slate-400 ml-auto sm:ml-0">
-          <span className="flex items-center gap-1 text-sky-400 font-medium">
-            <ShieldCheck className="w-3.5 h-3.5" />
+        <div style={{ display: "flex", alignItems: "center", gap: "16px", fontSize: "12px" }}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#38bdf8", fontWeight: 700 }}>
+            <ShieldCheck style={{ width: "15px", height: "15px" }} />
             1 iPhone 17 Pro per 100 Eligible Members
           </span>
-          <span className="hidden md:inline text-slate-500">|</span>
-          <span className="hidden md:inline text-slate-400">Giveaway terms apply</span>
+          <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>
+          <span style={{ color: "#94a3b8" }}>Giveaway terms apply</span>
         </div>
       </div>
     </aside>

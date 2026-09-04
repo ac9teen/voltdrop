@@ -15,75 +15,104 @@ export const DealsShowcase = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 relative bg-[#030712] border-t border-slate-800/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-wrapper" style={{ backgroundColor: "rgba(12, 15, 23, 0.4)" }}>
+      <div className="site-container">
         
-        {/* Section Header with exact positioning headline */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
+        {/* Header */}
+        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 64px auto" }}>
+          <div className="pill-badge pill-badge-gold" style={{ marginBottom: "16px" }}>
             Core Value Proposition
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+          <h2 style={{ fontSize: "2.75rem", fontWeight: 900, marginBottom: "20px", letterSpacing: "-0.03em" }}>
             THE GIVEAWAYS GET THE ATTENTION. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-white">
-              THE DEALS KEEP YOU HERE.
-            </span>
+            <span className="text-gradient-gold">THE DEALS KEEP YOU HERE.</span>
           </h2>
 
-          <div className="text-base sm:text-lg text-slate-300 space-y-3 max-w-3xl mx-auto leading-relaxed">
-            <p>
+          <div style={{ fontSize: "1.125rem", color: "#cbd5e1", lineHeight: 1.6 }}>
+            <p style={{ marginBottom: "12px" }}>
               Inside the community, selected vendors release limited-time offers on electronics. When a deal goes live, members get the details through Telegram.
             </p>
-            <p className="text-slate-400 text-sm">
+            <p style={{ color: "#94a3b8", fontSize: "14px" }}>
               Some offers may disappear quickly when promotional pricing ends or inventory sells out.
             </p>
           </div>
         </div>
 
-        {/* 6 Product Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* 6 Product Categories */}
+        <div className="deals-grid">
           {SITE_CONFIG.categories.map((cat, idx) => {
             const IconComponent = iconMap[cat.icon] || Cpu;
             return (
-              <div
-                key={idx}
-                className="relative rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 p-7 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-xl group"
-              >
+              <div key={idx} className="glass-card deal-card">
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-6 h-6 text-amber-400" />
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+                    <div className="deal-icon-badge">
+                      <IconComponent style={{ width: "22px", height: "22px", color: "#fde047" }} />
                     </div>
-                    <span className="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
+                    <span style={{ fontSize: "11px", fontFamily: "var(--font-mono)", color: "#94a3b8", background: "rgba(255,255,255,0.06)", padding: "4px 10px", borderRadius: "6px" }}>
                       CATEGORY 0{idx + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#ffffff", marginBottom: "10px", letterSpacing: "-0.02em" }}>
                     {cat.name}
                   </h3>
 
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: 1.6 }}>
                     {cat.desc}
                   </p>
                 </div>
 
-                <div className="pt-5 mt-5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                  <span>Up to 50% on selected items</span>
-                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors" />
+                <div style={{ paddingTop: "16px", marginTop: "24px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "12px", color: "#94a3b8" }}>
+                  <span>Up to 50% on selected stock</span>
+                  <ArrowUpRight style={{ width: "16px", height: "16px", color: "#fde047" }} />
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Category footnote */}
-        <div className="text-center text-xs text-slate-400 max-w-xl mx-auto">
+        {/* Footnote */}
+        <div style={{ textAlign: "center", fontSize: "12px", color: "#94a3b8", maxWidth: "600px", margin: "40px auto 0 auto" }}>
           Vendor inventory and deals drop spontaneously. All members receive Telegram push notifications simultaneously.
         </div>
 
       </div>
+
+      <style jsx>{`
+        .deals-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        @media (min-width: 640px) {
+          .deals-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 1024px) {
+          .deals-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .deal-card {
+          padding: 28px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .deal-icon-badge {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: rgba(234, 179, 8, 0.12);
+          border: 1px solid rgba(234, 179, 8, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </section>
   );
 };

@@ -23,26 +23,50 @@ export const StickyMobileCTA = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 lg:hidden transition-all duration-300 shadow-2xl">
-      <div className="max-w-md mx-auto flex items-center justify-between gap-3">
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1.5">
-            <Zap className="w-3.5 h-3.5 text-amber-400 fill-current" />
-            <span className="text-xs font-bold text-white tracking-tight">VoltDrop VIP</span>
+    <div className="sticky-mobile-bar">
+      <div className="site-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", padding: 0 }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <Zap style={{ width: "14px", height: "14px", color: "#fde047", fill: "currentColor" }} />
+            <span style={{ fontSize: "12px", fontWeight: 800, color: "#ffffff" }}>VoltDrop VIP</span>
           </div>
-          <span className="text-sm text-amber-400 font-extrabold font-mono">{SITE_CONFIG.membershipFee} Lifetime Access</span>
+          <span style={{ fontSize: "14px", color: "#fde047", fontWeight: 900, fontFamily: "var(--font-mono)" }}>
+            {SITE_CONFIG.membershipFee} Lifetime
+          </span>
         </div>
 
         <a
           href={SITE_CONFIG.checkoutUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 max-w-[190px] flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg hover:from-amber-300 hover:to-amber-400 transition-all text-center"
+          className="btn-gold"
+          style={{ padding: "12px 24px", fontSize: "13px", borderRadius: "12px", whiteSpace: "nowrap" }}
         >
           <span>JOIN NOW</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight style={{ width: "16px", height: "16px" }} />
         </a>
       </div>
+
+      <style jsx>{`
+        .sticky-mobile-bar {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 50;
+          padding: 14px 20px;
+          background: rgba(8, 9, 14, 0.95);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+        }
+        @media (min-width: 1024px) {
+          .sticky-mobile-bar {
+            display: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
