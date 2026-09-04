@@ -43,12 +43,12 @@ export const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 relative bg-[#070709] border-t border-white/5">
+    <section id="faq" className="py-20 lg:py-28 relative bg-[#030712] border-t border-slate-800/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             Clear Answers
           </div>
@@ -69,27 +69,31 @@ export const FAQSection = () => {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden transition-colors"
+                className={`rounded-2xl border transition-all duration-200 shadow-lg ${
+                  isOpen
+                    ? "bg-slate-900 border-amber-500/40"
+                    : "bg-slate-900/70 border-slate-800 hover:border-slate-700"
+                }`}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors focus:outline-none"
+                  className="w-full px-7 py-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
                   <span className="text-base sm:text-lg font-bold text-white leading-snug">
                     {faq.q}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full border border-white/10 bg-black/40 flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-white/10" : ""
+                    className={`w-9 h-9 rounded-full border border-slate-700 bg-slate-800 flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      isOpen ? "rotate-180 bg-amber-500/20 border-amber-500/40" : ""
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4 text-slate-300" />
+                    <ChevronDown className={`w-4 h-4 ${isOpen ? "text-amber-400" : "text-slate-300"}`} />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                  <div className="px-7 pb-6 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4">
                     {faq.a}
                   </div>
                 )}

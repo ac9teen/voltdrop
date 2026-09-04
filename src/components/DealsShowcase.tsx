@@ -15,12 +15,12 @@ export const DealsShowcase = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 relative bg-[#070709] border-t border-white/5">
+    <section className="py-20 lg:py-28 relative bg-[#030712] border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with exact positioning headline */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-xs font-bold uppercase tracking-wider text-amber-300 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
             Core Value Proposition
           </div>
 
@@ -48,14 +48,14 @@ export const DealsShowcase = () => {
             return (
               <div
                 key={idx}
-                className="relative rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 p-6 flex flex-col justify-between hover:border-amber-400/30 transition-all group"
+                className="relative rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 p-7 flex flex-col justify-between transition-all hover:-translate-y-1 shadow-xl group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
                       <IconComponent className="w-6 h-6 text-amber-400" />
                     </div>
-                    <span className="text-[11px] font-mono text-slate-400">
+                    <span className="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
                       CATEGORY 0{idx + 1}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export const DealsShowcase = () => {
                   </p>
                 </div>
 
-                <div className="pt-5 mt-5 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+                <div className="pt-5 mt-5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
                   <span>Up to 50% on selected items</span>
                   <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-amber-400 transition-colors" />
                 </div>

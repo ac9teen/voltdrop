@@ -6,12 +6,12 @@ import { SITE_CONFIG } from "@/config/site";
 
 export const TrustSection = () => {
   return (
-    <section className="py-20 lg:py-28 relative bg-[#070709] border-t border-white/5">
+    <section className="py-20 lg:py-28 relative bg-[#030712] border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with verbatim trust copy */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-4">
             <ShieldCheck className="w-3.5 h-3.5" />
             Integrity First Approach
           </div>
@@ -31,79 +31,79 @@ export const TrustSection = () => {
         {/* 4 Pillars of Credibility */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           
-          <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+          <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/30 transition-all flex flex-col justify-between shadow-xl">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400">
-                <Lock className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 text-emerald-400">
+                <Lock className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                 Flat {SITE_CONFIG.membershipFee} Fee
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Zero hidden recurring charges or automated debits. One single payment grants you direct access to the Telegram community.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/5 text-[11px] font-mono text-emerald-400">
+            <div className="pt-5 mt-5 border-t border-slate-800 text-xs font-mono font-semibold text-emerald-400">
               Transparent Pricing
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+          <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/30 transition-all flex flex-col justify-between shadow-xl">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 text-sky-400">
-                <Scale className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-5 text-sky-400">
+                <Scale className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                 Predictable 100:1 Ratio
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 We strictly tie our giveaways to community volume. For every 100 eligible participants, an iPhone 17 Pro is allocated.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/5 text-[11px] font-mono text-sky-400">
+            <div className="pt-5 mt-5 border-t border-slate-800 text-xs font-mono font-semibold text-sky-400">
               Mathematical Model
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+          <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/30 transition-all flex flex-col justify-between shadow-xl">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 text-amber-400">
-                <FileText className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-5 text-amber-400">
+                <FileText className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                 Auditable Rules
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Giveaway qualification, verification, and winner determination are set in stone in our public Giveaway Terms.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/5 text-[11px] font-mono text-amber-400">
+            <div className="pt-5 mt-5 border-t border-slate-800 text-xs font-mono font-semibold text-amber-400">
               Explicit Terms
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+          <div className="p-7 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/30 transition-all flex flex-col justify-between shadow-xl">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 text-purple-400">
-                <CheckCircle className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-5 text-purple-400">
+                <CheckCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-2">
                 No Fake Scarcity
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 We do not use artificial countdown timers, fake participant numbers, or manipulative popups. You get straight facts.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/5 text-[11px] font-mono text-purple-400">
-              Ad Compliant & Honest
+            <div className="pt-5 mt-5 border-t border-slate-800 text-xs font-mono font-semibold text-purple-400">
+              Ad Compliant &amp; Honest
             </div>
           </div>
 
         </div>
 
-        {/* Future Testimonials Placeholder note clearly marked per instructions */}
-        <div className="rounded-2xl border border-dashed border-white/15 bg-black/40 p-6 text-center max-w-xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
+        {/* Future Testimonials Placeholder note clearly marked */}
+        <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 p-6 text-center max-w-2xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
             Community Member Reviews Archive
           </span>
           <p className="text-xs text-slate-400 leading-relaxed">
